@@ -43,33 +43,18 @@ const ItemListContainer = () => {
     //     }
     // })
 
-    // función para cambiar el estado de me gusta
-    const handleMeGusta = () => {
-        setMeGusta(!meGusta)
-    }
-
-    // función para agregar un nuevo producto
-    const handleAddProduct = () => {
-        setProducts([
-            ...products,
-            {id: products.length+1, name: 'Producto de prueba', price: 1500, description: 'lorem asdfas asdf asdf '}
-        ])
-    }
-    console.log('render de ItemlistContainer')
     return (
         <center>
-            <button className="btn btn-outline-dark" onClick={handleMeGusta}>ME gusta</button>
-            <button className="btn btn-outline-dark" onClick={handleAddProduct}>agregar product</button>
-            <div className="row">
-            { loading ? // true - false
-                    <Loading />
-                :   
-                    <ItemList products={products} />
-            }
-            </div>
+        <div className="row">
+        { loading ? // true - false
+        <Loading />
+        :
+        <ItemList products={products} />
+        }
+        </div>
         </center>
-
-    )
+        
+        )
 }
 
 export default ItemListContainer
