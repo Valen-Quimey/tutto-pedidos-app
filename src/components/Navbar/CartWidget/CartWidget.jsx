@@ -1,4 +1,3 @@
-import img from '../../../assets/react.svg'
 
 import './CartWidget.css'
 function CartWidget() {

@@ -12,8 +12,7 @@ const Formulario = () => { // (componente -> contenedores)
     })   
 
     const handleOnChange = (evt) => {
-        // console.log(evt.target.name)
-        // console.log(evt.target.value)
+   
         setFormData({
             ...formData,
             [evt.target.name]: evt.target.value 
@@ -23,7 +22,7 @@ const Formulario = () => { // (componente -> contenedores)
 
     return (
         <div>
-            {/* <Form formData={formData} handleOnChange={handleOnChange} /> */}
+            
             <FormWhitValidation 
                 formData={formData}
                 handleOnChange={handleOnChange}

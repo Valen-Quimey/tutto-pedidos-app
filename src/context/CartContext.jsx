@@ -12,14 +12,13 @@ export const CartContextProvider = ({ children }) => {
 
     const addProduct = (newProduct)=>{
         // lógica  para evitar duplicados
-        // 1 - existe el producto         
-        // findIndex
+        
 
-        const index = isProduct(newProduct.id) // 0 -mucho
-        // console.log(index)
+        const index = isProduct(newProduct.id) 
+        
         if (index !== -1) {
-            cartList[index].quantity += newProduct.quantity // modique una prop de un obj de cart
-            setCartList([...cartList]) // agregar esto si o si 
+            cartList[index].quantity += newProduct.quantity 
+            setCartList([...cartList]) 
         } else {
             setCartList([
                 ...cartList,

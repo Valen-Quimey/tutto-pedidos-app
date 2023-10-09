@@ -4,13 +4,7 @@ import ItemList from "../ItemList/ItemList"
 import { useParams } from "react-router-dom"
 
 const Loading = ()=>{
-    // estados y componentes hijos
-    // useEffect(()=>{
-        // acciones
-        // return ()=>{ // clean up
-        //     console.log('desmontando loading...')
-        // } 
-    // })
+    
 
     return (
         <>

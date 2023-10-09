@@ -54,7 +54,3 @@ const ItemDetail = ({product}) => {
 
 export default ItemDetail
 
-// html js
-// button = document.querySelector('#agregarAlCarrito') // no se toca el dom 
-// button.addEventlistener('click', function(){})
-// button.addEventlistener('click', function(){}) - removeEnentlistener('click', function(){})

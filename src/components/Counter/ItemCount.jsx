@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 
-// un re-render se produce con un cambio de estado o de props - evento
+
 const ItemCount = ({ initial, stock, onAdd }) => {   
     const [counter, setcounter] = useState(initial)    
     

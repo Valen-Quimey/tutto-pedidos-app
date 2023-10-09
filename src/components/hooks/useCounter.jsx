@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-// ccoustome hook 
+
 export const useCounter = (min, max)=>{
     const [count, setCount] =  useState(min)     
    
