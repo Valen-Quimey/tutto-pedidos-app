@@ -19,7 +19,7 @@ const ItemDetialContainer = () => {
         .then(resp => setProduct(resp))
         .catch(err=> console.log(err))
         // .finally(set loading)
-    },[])
+    },[pid])
 
     return (
         <div>            

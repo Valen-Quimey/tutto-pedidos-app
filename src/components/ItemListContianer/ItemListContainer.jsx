@@ -17,7 +17,7 @@ const Loading = ()=>{
 const ItemListContainer = () => { 
     const [products, setProducts] = useState([])
     const [ loading, setLoading ] = useState(true)
-    const [ meGusta, setMeGusta ] = useState(false)
+    
     
     // evento props estado ??? 
     const { cid } = useParams()

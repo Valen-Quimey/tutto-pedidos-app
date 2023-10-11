@@ -1,5 +1,4 @@
 import { memo } from "react"
-import Filter from "../Filter/Filter"
 import Item from "../Item/Item"
 
 
