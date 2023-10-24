@@ -1,3 +1,34 @@
+
+# Tutto Pedidos App
+
+Tutto Pedidos es una aplicación de comidas, donde el cliente podrá elegir entre distintos menús y hacer un pedido en base a los opciones que prefiera. 
+
+
+## Dependencias - versiones
+
+- `@babel/plugin-proposal-private-property-in-object@7.21.11`
+- `@jest/types@29.6.3`
+- `@testing-library/jest-dom@5.17.0`
+- `@testing-library/react@13.4.0`
+- `@testing-library/user-event@13.5.0`
+- `@types/yargs@17.0.28`
+- `bootstrap@5.3.2`
+- `escape-string-regexp@4.0.0`
+- `expect@29.7.0`
+- `jest-message-util@29.7.0`
+- `jest-util@29.7.0`
+- `react-bootstrap@2.9.0`
+- `react-dom@18.2.0`
+- `react-router-dom@6.16.0`
+- `react-scripts@5.0.1`
+- `react@18.2.0`
+- `web-vitals@2.1.4`
+
+## Tutto Gif
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
