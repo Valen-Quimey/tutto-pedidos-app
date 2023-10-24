@@ -25,7 +25,7 @@ Tutto Pedidos es una aplicación de comidas, donde el cliente podrá elegir entr
 - `web-vitals@2.1.4`
 
 ## Tutto Gif
-
+https://github.com/Valen-Quimey/tutto-pedidos-app/assets/122574334/d6f9c37f-42e1-4cd7-aa0b-895a0bd4b0d1
 
 
 
