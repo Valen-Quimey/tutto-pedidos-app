@@ -1,60 +1,57 @@
-import { useEffect, useState } from "react"
-import { mFetch } from "../../utils/mockFetch"
-import ItemList from "../ItemList/ItemList"
-import { useParams } from "react-router-dom"
+import React, { useEffect, useState } from "react";
+import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
+import ItemList from "../ItemList/ItemList";
+import { useParams } from "react-router-dom";
 
-const Loading = ()=>{
-    
-
+const Loading = () => {
     return (
-        <>
-            <h2>Loading ...</h2> 
-        </>
-    )
+        <h2>Loading ...</h2>
+    );
 }
 
+const ItemListContainer = () => {
+    const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-const ItemListContainer = () => { 
-    const [products, setProducts] = useState([])
-    const [ loading, setLoading ] = useState(true)
-    
-    
-    // evento props estado ??? 
-    const { cid } = useParams()
-    // console.log(cid)
+    const { cid } = useParams();
 
-    useEffect(()=>{
-        if (cid) {
-            mFetch()
-            .then(respuesta => setProducts( respuesta.filter(product => cid === product.category )))
-            .catch(err => console.log(err))
-            .finally(()=> setLoading(false))            
-        } else {            
-            mFetch()
-            .then(respuesta => setProducts(respuesta))
-            .catch(err => console.log(err))
-            .finally(()=> setLoading(false))
-        }
-    }, [cid])
+    useEffect(() => {
+        const fetchProducts = async () => {
+            try {
+                const db = getFirestore();
+                const productsCollection = collection(db, 'productos');
+                let queryFilter;
 
-    // useEffect(()=>{
-    //     return ()=>{
-    //         console.log('desmontando ItemListContainer')
-    //     }
-    // })
+                if (cid) {
+                    queryFilter = query(productsCollection, where('category', '==', cid));
+                } else {
+                    queryFilter = productsCollection;
+                }
+
+                const querySnapshot = await getDocs(queryFilter);
+
+                const productsData = querySnapshot.docs.map(prod => ({ id: prod.id, ...prod.data() }));
+                setProducts(productsData);
+                setLoading(false);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        };
+
+        fetchProducts();
+    }, [cid]);
 
     return (
         <center>
-        <div className="row">
-        { loading ? // true - false
-        <Loading />
-        :
-        <ItemList products={products} />
-        }
-        </div>
+            <div className="row">
+                {loading ? (
+                    <Loading />
+                ) : (
+                    <ItemList products={products} />
+                )}
+            </div>
         </center>
-        
-        )
+    );
 }
 
-export default ItemListContainer
+export default ItemListContainer;

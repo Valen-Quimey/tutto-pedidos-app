@@ -3,7 +3,10 @@ import { useCartContext } from "../../context/CartContext";
 
 const CartContainer = () => {
   const { cartList, deleteCart, eliminarProducto, precioTotal } = useCartContext();
-
+  //esto refiere al botón de generar order
+  const handleAddOrder = () => {
+    
+  }
   return (
     <div>
       {cartList.length === 0 ? (
@@ -24,7 +27,9 @@ const CartContainer = () => {
           ))}
           <button onClick={deleteCart}>Vaciar Carrito</button>
           <h3>Precio total: {precioTotal()}</h3>
+          <button className="btn btn-success" onclick= {handleAddOrder}>Terminar compra</button>
         </div>
+        
       )}
     </div>
   );
