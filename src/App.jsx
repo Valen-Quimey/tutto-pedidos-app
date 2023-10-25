@@ -8,6 +8,7 @@ import CartContainer from './components/CartContainer/CartContainer'
 import {  CartContextProvider } from './context/CartContext'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
+import Checkout from './components/Checkout/Checkout'
 
 function App() { 
     // estados y funciones para context
@@ -20,9 +21,9 @@ function App() {
                 <Routes>
                     <Route path='/' element={<ItemListContainer /> }/>
                     <Route path='/category/:cid' element={<ItemListContainer /> }/>
-                    
                     <Route path='/detalle/:pid' element={<ItemDetialContainer /> }/>
-                    <Route path='/cart' element={ <CartContainer /> }/>              
+                    <Route path='/cart' element={ <CartContainer /> }/>  
+                    <Route path='/checkout' element={ <Checkout /> }/> 
                 </Routes>  
             </CartContextProvider>            
         </Router>

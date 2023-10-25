@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import { initFirebase } from './src/firebase/config.js'
-// import './index.css'
+
+//funcion para inicializar firebase
 initFirebase()
-// App() -> <App />
+
 ReactDOM.createRoot(document.getElementById('root')).render( 
     // <BrowserRouter>
         <App /> 
