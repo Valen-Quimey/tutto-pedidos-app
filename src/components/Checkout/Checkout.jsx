@@ -34,7 +34,7 @@ const Checkout = () => {
           setOrderId(res.id);
           deleteCart();
         })
-        .catch((error) => console.log(error));
+        .catch((error) => console.error(log));
     }
   }
 
